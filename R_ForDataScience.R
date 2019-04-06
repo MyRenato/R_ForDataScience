@@ -156,6 +156,31 @@ ggplot(data = mpg) +
   geom_smooth(mapping = aes(x = displ, y = hwy,color=drv, linetype=drv))
 
 
-tEST2
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut))
 
+ggplot(data = diamonds) +
+  stat_summary(
+    mapping = aes(x=cut, y = depth),
+    fun.ymin = min,
+    fun.ymax = max,
+    fun.y = median
+  )
 
+ggplot(data = diamonds) +
+  stat_summary(
+    mapping = aes(x=cut, y = depth))
+
+ggplot(data = diamonds) +
+  geom_col(
+    mapping = aes(x=cut, y = depth))
+
+p1 <- ggplot(data = diamonds) +
+  geom_smooth(mapping = aes(x=carat, y = price))
+p1
+
+ggplot(data = diamonds) +  
+  geom_bar(mapping = aes(x = cut, y = ..prop.., group=1))
+
+ggplot(data = diamonds) +  
+  geom_bar(mapping = aes(x = cut, fill = color, y = ..prop.., group=color))
