@@ -189,12 +189,41 @@ ggplot(data = diamonds) +
 ggplot(data = diamonds) +
   geom_bar(mapping = aes(x = cut, color=cut))
 
-ggplot(data = diamonds) +
+staced <-  ggplot(data = diamonds) +
   geom_bar(mapping = aes(x = cut, fill=clarity))
 
 
 ggplot(data = diamonds, 
       mapping = aes(x = cut, fill = clarity)
       ) +
-      geom_bar(position = "identity")
+      geom_bar(position = "dodge")
+
+ggplot(data = diamonds, 
+       mapping = aes(x = cut, color = clarity)
+) +
+  geom_bar(fill=NA, position = "identity")
   
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +  
+  geom_count()
+
+ggplot(data = mpg, mapping = aes(x = drv, y = hwy, colour=class)) +  
+  geom_boxplot(position = "dodge")
+
+nz <- map_data("nz")
+
+ggplot(nz, mapping = aes(long, lat, group=group)) +
+  geom_polygon(fill="white", color="black") +
+  coord_map()
+  #coord_quickmap()coord_map()
+
+staced + 
+  coord_polar()
+
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +  
+  geom_point() +
+  geom_abline() + 
+  coord_fixed()
+
+
+############ Cap3 ##########
+tibble()
