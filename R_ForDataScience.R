@@ -184,3 +184,10 @@ ggplot(data = diamonds) +
 
 ggplot(data = diamonds) +  
   geom_bar(mapping = aes(x = cut, fill = color, y = ..prop.., group=color))
+
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, color=cut))
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x = cut, fill=clarity))
